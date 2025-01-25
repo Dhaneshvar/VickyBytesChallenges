@@ -32,6 +32,23 @@ FYI (use if needed):
 
     > pip freeze > requirements.txt
 
+## Create .env file
+
+I have not Commited .env because of security/vulnerability reason. so create .env file in current folder
+
+.env
+
+    FLASK_SQLALCHEMY_TRACK_MODIFICATIONS = False
+
+    FLASK_SECRET_KEY = '<get Secrets from Below Scripts>'
+
+
+## To create Secret Key
+
+``` python
+import secrets
+print(secrets.token_hex(16))
+```
 
 ## Run the application
 
@@ -46,12 +63,6 @@ To run the flask application.
 >>> db.create_all()
 ```
 
-## To create Secret Key
-
-``` python
-import secrets
-print(secrets.token_hex(16))
-```
 
 ## Testing Endpoints
 - Use **Postman** or **cURL** to test endpoints.
@@ -388,7 +399,7 @@ Output:
 1. **Publishing Live**
 
 ```bash
-curl --location --request POST 'http://127.0.0.1:5001/publish_tools/3/live' \
+curl --location --request POST 'http://127.0.0.1:5000/publish_tools/3/live' \
 --header 'Content-Type: application/json'
 ```
 
@@ -403,7 +414,7 @@ Output:
 2. **Publishing to Draft**
 
 ```bash
-curl --location --request POST 'http://127.0.0.1:5001/publish_tools/3/draft' \
+curl --location --request POST 'http://127.0.0.1:5000/publish_tools/3/draft' \
 --header 'Content-Type: application/json'
 ```
 

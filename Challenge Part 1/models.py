@@ -55,6 +55,9 @@ class Component(db.Model):
     variant  = db.Column(db.String(50))
     pricing = db.Column(db.Float)
 
+
+# There are Schema from Marshmallow to serialize the data while displaying
+
 class CompanySchema(ma.Schema):
     class Meta:
         fields = ('id', 'name', 'email')
